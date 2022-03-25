@@ -1,0 +1,11 @@
+---
+
+- name: set name got master
+  hostname:
+    name: k8s-master
+
+- name: add master in /et/chostname
+  lineinfile:
+    path: /etc/hosts
+    line: "{{ ansible_default_ipv4.address }} k8s-master"
+  
